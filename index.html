@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Builderment File Information</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body ondrop="drop(event);" ondragover="drag(event);" ondragleave="dragLeave(event);">
+        <!-- Title -->
+        <div class="title">
+            <img src="Builderment Icon.jpg" alt="Builderment Icon" class="title">
+            <p class="title">Builderment File Information</p>
+            <img src="Builderment Icon.jpg" alt="Builderment Icon" class="title">
+        </div>
+
+        <!-- Explanation -->
+        <p>
+            Welcome to Builderment File Information! Here you can upload your save game file and
+            get Information about your saved file.
+        </p>
+
+        <!-- Drag and Drop -->
+        <div id="dragNdrop" class="dragNdrop" ondrop="drop(event);" ondragover="drag(event);">
+            <div class="dottedLines" ondrop="drop(event);" ondragover="drag(event);"></div>
+            <p ondrop="drop(event);" ondragover="drag(event);">drop</p>
+        </div>
+        
+        <!-- Upload Button -->
+        <p style="float: left;">Drag and drop or</p>
+        <label for="file" style="float: left;">Upload file!</label>
+        <input type="file" accept=".sav" id="file">
+        <div style="clear: both;"></div>
+        <p id="uploadError" class="uploadError"></p>
+
+        <!-- Information Box -->
+        <table class="information">
+            <thead>
+                <td class="information" id="fileName" colspan="2">File name</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="information" id="seed">Seed: 0</td>
+                    <td class="information" id="size">World Size: 0</td>
+                </tr>
+                <tr>
+                    <td class="information" id="quality">Resource Quality: 0</td>
+                    <td class="information" id="ET">Max Earth Token: 0 ET/min</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+
+        <!-- Resource Table -->
+        <table class="resources">
+            <thead>
+                <td colspan="2">Resources</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Wood</td>
+                    <td id="resourcesWood">0</td>
+                </tr>
+                <tr>
+                    <td>Stone</td>
+                    <td id="resourcesStone">0</td>
+                </tr>
+                <tr>
+                    <td>Iron</td>
+                    <td id="resourcesIron">0</td>
+                </tr>
+                <tr>
+                    <td>Copper</td>
+                    <td id="resourcesCopper">0</td>
+                </tr>
+                <tr>
+                    <td>Coal</td>
+                    <td id="resourcesCoal">0</td>
+                </tr>
+                <tr>
+                    <td>Wolframite</td>
+                    <td id="resourcesWolframite">0</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+    <script src="index.js"></script>
+</html>

@@ -1,0 +1,121 @@
+/* Fonts */
+@font-face {
+    font-family: Oswald;
+    src: url(Oswald-Regular.ttf);
+}
+@font-face {
+    font-family: troika;
+    src: url(troika.otf);
+}
+
+/* Other */
+body {
+    margin: 15px 8px;
+    background-color: rgb(54, 57, 63);
+    color: white;
+    font-family: Oswald, "Arial Rounded MT";
+    font-size: 18px;
+}
+p {
+    margin: 10px 0;
+}
+
+/* Title */
+.title {
+    height: 80px;
+    margin: 0 0 10px 0;
+}
+div.title {
+    display: flex;
+}
+p.title {
+    font-size: 48px;
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+    font-family: troika;
+}
+
+/* Upload Button */
+input[type="file"] {
+    display: none;
+}
+label[for="file"] {
+    background-color: black;
+    padding: 5px;
+    border-radius: 5px;
+    transition: .5s;
+    margin: 5px;
+}
+label[for="file"]:hover {
+    background-color: gray;
+    cursor: pointer;
+}
+
+/* Upload error message */
+.uploadError {
+    color: red;
+    font-size: 15px;
+}
+
+/* Drag and drop */
+.dragNdrop {
+    position: fixed;
+    width: 101.5%;
+    height: 100%;
+    left: -8px;
+    bottom: 0px;
+    background-color: #00800050;
+    transition: .01s;
+    visibility: hidden;
+}
+.dottedLines {
+    position: fixed;
+    width: 75%;
+    height: 87%;
+    left: 8.4%;
+    bottom: 4.5%;
+    border-radius: 20px;
+    border: black 20px dashed;
+}
+.dragNdrop p {
+    position: fixed;
+    bottom: 43%;
+    left: 35%;
+    font-size: 96px;
+}
+
+/* Info Area */
+table.information {
+    width: 100%;
+    border: white solid 1px;
+    border-radius: 10px;
+}
+td.information {
+    width: 50%;
+    padding: 5px 10px 5px 15px;
+    font-size: 18px;
+}
+thead td.information {
+    border-radius: 10px;
+    border: white solid 1px;
+    text-align: center;
+}
+
+/* Resource Table */
+table.resources, .resources tbody td {
+    border: white 1px solid;
+    padding: 4px 5px 3px 4px;
+    text-align: left;
+    border-radius: 5px;
+    font-family: troika;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+}
+table.resources thead td {
+    text-align: center;
+}
+table.resources {
+    padding: 6px 5px;
+    border-radius: 10px;
+}
