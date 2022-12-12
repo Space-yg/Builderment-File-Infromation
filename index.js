@@ -1,38 +1,3 @@
-/**
- * Converts object to string
- * @param {object} object The object
- * @returns {String} The object as a string
- */
-function objToString(object, space = "") {
-    var obj = ""
-    try {
-        obj += object.constructor.name + " ";
-    } catch {} finally {
-        obj += "{\n";
-    }
-    for (const key in object) {
-        obj += space + "  " + key + ": "
-        switch (typeof object[key]) {
-            case "string":
-                obj += "\"" + object[key] + "\"";
-                break;
-            case "object":
-                if (object[key] === null) obj += "null";
-                else if (Array.isArray(object[key])) obj += arrToString(object[key], space + "  ");
-                else if (space === "      ") obj += "[Object]";
-                else if (Object.keys(object[key]).length > 10) obj += "[" + object[key].constructor.name + "]";
-                else obj += objToString(object[key], space + "  ");
-                break;
-            default:
-                obj += object[key];
-                break;
-        }
-        obj += ",\n";
-    }
-    obj += space + "}";
-    return obj;
-}
-
 // All list are in the order of Wood, Stone, Iron, Copper, Coal, Wolframite
 const resourcesNames = ["Wood", "Stone", "Iron", "Copper", "Coal", "Wolframite"];
 const ET = [7242, 5028, 7932, 5315, 6954, 3520];
