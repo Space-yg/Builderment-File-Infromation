@@ -1,5 +1,5 @@
 // All list are in the order of Wood, Stone, Iron, Copper, Coal, Wolframite
-const resourcesNames = ["Wood", "Stone", "Iron", "Copper", "Coal", "Wolframite"];
+const resourcesNames = ["Wood", "Stone", "Iron", "Copper", "Coal", "Wolframite", "Uranium"];
 const ET = [7242, 5028, 7932, 5315, 6954, 3520];
 
 // Other
@@ -23,13 +23,13 @@ const ETTag = document.getElementById("ET");
 function getResourcesData(fileData) {
     for (let i = fileData.length - 60; i > 0; i--) {
         const found = [];
-        for (let j = 0; j < 6; j++) {
+        for (let j = 0; j < 7; j++) {
             const num = fileData[i + (j * 10)];
-            if (11 <= num && num <= 16 && found.every(n => num !== n) && fileData[i + (j * 10) + 1] === 0) found.push(num);
+            if (11 <= num && num <= 17 && found.every(n => num !== n) && fileData[i + (j * 10) + 1] === 0) found.push(num);
             else break;
         }
-        if (found.length === 6) {
-            return fileData.slice(i, i + 60);
+        if (found.length === 7) {
+            return fileData.slice(i, i + 70);
         }
     }
 }
@@ -40,7 +40,7 @@ function getResourcesData(fileData) {
  * @returns {Uint8Array} Resources in the order of Wood, Stone, Iron, Copper, Coal, Wolframite
  */
 function getResources(data) {
-    const resources = [0, 0, 0, 0, 0, 0];
+    const resources = [0, 0, 0, 0, 0, 0, 0];
     // Puts resources in order
     for (let i = 6; i < data.length; i += 10) resources[data[i - 6] - 11] = parseInt(data[i + 1].toString(16) + data[i].toString(16), 16) / 8;
     return resources;
