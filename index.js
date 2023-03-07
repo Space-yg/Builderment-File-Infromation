@@ -23,7 +23,7 @@ const ETTag = document.getElementById("ET");
 function getResourcesData(fileData) {
     for (let i = fileData.length - 60; i > 0; i--) {
         const found = [];
-        for (let j = 0; j < 7; j++) {
+        for (let j = 0; j < 6; j++) {
             const num = fileData[i + (j * 10)];
             if (11 <= num && num <= 17 && found.every(n => num !== n) && fileData[i + (j * 10) + 1] === 0) found.push(num);
             else break;
